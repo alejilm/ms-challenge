@@ -20,9 +20,3 @@ function requester(method, base, headers = { Accept: '*/*' }) {
   return (path = []) => fetch((base ? [base, ...path] : path).join('/'), { method, headers })
     .then(r => r.json());
 }
-
-var a = requester('GET', 'https://api.github.com/users/mediastream/following{/other_user}');
-a.call();
-
-var b = requester('GET', 'https://api.github.com/users/mediastream/users');
-b.call();
